@@ -1,8 +1,7 @@
-package parsers;
+package parser;
 
 import symbol_structuries.Paragraph;
 import symbol_structuries.SymbolInterface;
-import symbol_structuries.Text;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,7 +13,7 @@ public class TextParser extends DataParser {
 
     @Override
     public List<SymbolInterface> parse(SymbolInterface textToParse) {
-        String text = ((Text) textToParse).getText();
+        String text = textToParse.getText();
         List<SymbolInterface> paragraphs = new ArrayList<>();
 
         Pattern pattern = Pattern.compile(Regex.PARAGRAPH.toString());
@@ -27,8 +26,8 @@ public class TextParser extends DataParser {
                     .stream(splitted)
                     .forEach(s -> {
                         Paragraph p = new Paragraph(s);
+                        p.add(nextParse(p));
                         paragraphs.add(p);
-                        nextParse(p);
                     });
         }
 

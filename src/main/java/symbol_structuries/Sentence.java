@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Sentence implements TextInterface {
-    private String name = "Sentence";
+    private String text;
     private List<SymbolInterface> sentence = new ArrayList<>();
 
     public Sentence() {
@@ -13,11 +13,7 @@ public class Sentence implements TextInterface {
     }
 
     public Sentence(String sentence) {
-        String[] lexems = sentence.split(" ");
-
-        Arrays
-                .stream(lexems)
-                .forEach(s -> { this.sentence.add(new Lexem(s)); });
+        this.text = sentence;
     }
 
     public void getText(String text) {
@@ -26,7 +22,7 @@ public class Sentence implements TextInterface {
 
     @Override
     public void add(List<SymbolInterface> toAdd) {
-        //sentence.add(toAdd);
+        this.sentence.addAll(toAdd);
     }
 
     @Override
@@ -36,8 +32,8 @@ public class Sentence implements TextInterface {
 
     @Override
     public String getText() {
-        System.out.println(this.name);
-        return null;
+        System.out.println(this.text);
+        return text;
     }
 
     @Override

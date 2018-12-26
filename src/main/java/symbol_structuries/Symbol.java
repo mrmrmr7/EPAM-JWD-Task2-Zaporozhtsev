@@ -16,4 +16,9 @@ public class Symbol implements SymbolInterface {
         System.out.println(symbol);
         return null;
     }
+
+    @Override
+    public String getText() {
+        return String.valueOf(symbol);
+    }
 }

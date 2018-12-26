@@ -1,4 +1,4 @@
-package parsers;
+package parser;
 
 import data_actions.TextAction;
 import symbol_structuries.Paragraph;
@@ -17,13 +17,12 @@ class TextParserTest {
         Text text = new Text(TextAction.getTextByPath("/home/meow/Programming/Java/EPAM-JWD-Task2-Zaporozhtsev/src/main/resources/text.txt"));
 
         TextParser textParser = new TextParser();
-        textParser.linkWith(new ParagraphParser());
 
         text.add(textParser.parse(text));
 
         List<Paragraph> paragraphs = new ArrayList<>();
-        paragraphs.add(new Paragraph("(0)dfghjkl;lkjgfhjkhgfh\n"));
-        paragraphs.add(new Paragraph("(1)dfghhgfdhjgfhkgfhujyhtfjyfjfhjfasfd\n"));
+        paragraphs.add(new Paragraph("(0)dfghjkl;lkjgfhjkhgfh"));
+        paragraphs.add(new Paragraph("(1)dfghhgfdhjgfhkgfhujyhtfjyfjfhjfasfd"));
         assertEquals(paragraphs.get(1).getText(), ((Paragraph) text.getParagraphes().get(1)).getText());
     }
 }

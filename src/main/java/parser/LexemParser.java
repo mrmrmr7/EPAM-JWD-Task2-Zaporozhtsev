@@ -1,4 +1,4 @@
-package parsers;
+package parser;
 
 public class LexemParser {
 }

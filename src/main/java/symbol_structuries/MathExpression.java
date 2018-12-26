@@ -1,4 +1,4 @@
 package symbol_structuries;
 
-public class Expression {
+public class MathExpression {
 }

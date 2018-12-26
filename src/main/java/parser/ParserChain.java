@@ -1,4 +1,4 @@
-package parsers;
+package parser;
 
 import symbol_structuries.SymbolInterface;
 
@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface ParserChain<T> {
     List<SymbolInterface> parse(SymbolInterface smt);
-    ParserChain<T> linkWith(ParserChain<T> next);
+    void linkWith(ParserChain<T> next);
 }

@@ -3,7 +3,7 @@ package symbol_structuries;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Paragraph implements TextInterface{
+public class Paragraph implements TextInterface {
     private String paragraph;
     private List<SymbolInterface> sentences = new ArrayList<>();
 
@@ -13,7 +13,7 @@ public class Paragraph implements TextInterface{
 
     @Override
     public void add(List<SymbolInterface> toAdd) {
-
+        this.sentences.addAll(toAdd);
     }
 
     @Override
@@ -23,7 +23,7 @@ public class Paragraph implements TextInterface{
 
     @Override
     public String getText() {
-        return null;
+        return paragraph;
     }
 
     @Override

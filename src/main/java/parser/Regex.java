@@ -1,6 +1,4 @@
-package parsers;
-
-import java.time.ZonedDateTime;
+package parser;
 
 public enum Regex {
     PARAGRAPH {
@@ -11,7 +9,7 @@ public enum Regex {
 
     SENTENCE {
         public String toString() {
-            return ".";
+            return "g";
         }
     },
 

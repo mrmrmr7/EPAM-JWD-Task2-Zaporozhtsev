@@ -12,11 +12,6 @@ public class Word implements TextInterface {
     }
 
     public Word(String word) {
-        char[] symbols = word.toCharArray();
-
-        for (char symbol:symbols) {
-            this.word.add(new Symbol(symbol));
-        }
     }
 
     @Override
