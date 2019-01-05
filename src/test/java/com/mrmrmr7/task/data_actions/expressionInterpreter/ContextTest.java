@@ -10,6 +10,7 @@ class ContextTest {
     void evaluteTest() {
         Context context = new Context();
         int res = context.evalute("2+1").interpet();
+
         assertEquals(3, res);
     }
 }
